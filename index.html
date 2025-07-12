@@ -2,41 +2,92 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <title>Quay Thử Xổ Số</title>
+  <title>Quay Thử Xổ Số Miền Nam</title>
   <style>
-    body { font-family: Arial; text-align: center; background: #222; color: #fff; }
-    .result { font-size: 1.5em; margin-top: 20px; }
-    button { padding: 10px 20px; font-size: 16px; cursor: pointer; }
-    .number { margin: 10px 0; font-size: 1.8em; }
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: #fff;
+      margin: 20px;
+    }
+    h2 {
+      color: orange;
+    }
+    table {
+      margin: 0 auto;
+      border-collapse: collapse;
+      border: 2px solid orange;
+      width: 600px;
+    }
+    td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      font-size: 20px;
+      width: 80px;
+      height: 50px;
+      text-align: center;
+    }
+    .label {
+      background-color: #f6f6f6;
+      font-weight: bold;
+      width: 60px;
+    }
+    .btn {
+      margin: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+    }
   </style>
 </head>
 <body>
-  <h1>🎯 Quay Thử Xổ Số Miền Bắc</h1>
-  <button onclick="quayThu()">Quay Ngay</button>
-  <div class="result" id="result"></div>
+
+  <h2>QUAY THỬ XỔ SỐ MIỀN NAM NGÀY 12/7/2025</h2>
+  <button class="btn" onclick="quayThu()">Quay thử</button>
+
+  <table>
+    <tr><td class="label">ĐB</td><td colspan="7" id="gdb"></td></tr>
+    <tr><td class="label">G.1</td><td colspan="7" id="g1"></td></tr>
+    <tr><td class="label">G.2</td><td colspan="3" id="g2_1"></td><td colspan="4" id="g2_2"></td></tr>
+    <tr><td class="label">G.3</td>
+        <td colspan="2" id="g3_1"></td><td colspan="2" id="g3_2"></td><td colspan="3" id="g3_3"></td></tr>
+    <tr><td class="label"></td>
+        <td colspan="2" id="g3_4"></td><td colspan="2" id="g3_5"></td><td colspan="3" id="g3_6"></td></tr>
+    <tr><td class="label">G.4</td>
+        <td colspan="2" id="g4_1"></td><td colspan="2" id="g4_2"></td><td colspan="3" id="g4_3"></td></tr>
+    <tr><td class="label"></td><td colspan="7" id="g4_4"></td></tr>
+    <tr><td class="label">G.5</td>
+        <td colspan="2" id="g5_1"></td><td colspan="2" id="g5_2"></td><td colspan="3" id="g5_3"></td></tr>
+    <tr><td class="label"></td>
+        <td colspan="2" id="g5_4"></td><td colspan="2" id="g5_5"></td><td colspan="3" id="g5_6"></td></tr>
+    <tr><td class="label">G.6</td>
+        <td colspan="2" id="g6_1"></td><td colspan="2" id="g6_2"></td><td colspan="3" id="g6_3"></td></tr>
+    <tr><td class="label">G.7</td>
+        <td colspan="2" id="g7_1"></td><td colspan="2" id="g7_2"></td><td colspan="3" id="g7_3"></td></tr>
+    <tr><td class="label"></td><td colspan="7" id="g7_4"></td></tr>
+  </table>
 
   <script>
-    function taoSo(dai, soLuong) {
-      let kq = [];
-      for (let i = 0; i < soLuong; i++) {
-        let so = Math.floor(Math.random() * Math.pow(10, dai)).toString().padStart(dai, '0');
-        kq.push(so);
-      }
-      return kq;
+    function taoSo(dai) {
+      return Math.floor(Math.random() * Math.pow(10, dai)).toString().padStart(dai, '0');
+    }
+
+    function setText(id, dai) {
+      document.getElementById(id).innerText = taoSo(dai);
     }
 
     function quayThu() {
-      let html = '';
-      html += `<div class="number">🎁 Giải ĐB: ${taoSo(5, 1)[0]}</div>`;
-      html += `<div class="number">🥇 Giải Nhất: ${taoSo(5, 1)[0]}</div>`;
-      html += `<div class="number">🥈 Giải Nhì: ${taoSo(5, 2).join(', ')}</div>`;
-      html += `<div class="number">🥉 Giải Ba: ${taoSo(5, 6).join(', ')}</div>`;
-      html += `<div class="number">🏅 Giải Tư: ${taoSo(4, 4).join(', ')}</div>`;
-      html += `<div class="number">🏅 Giải Năm: ${taoSo(4, 6).join(', ')}</div>`;
-      html += `<div class="number">🏅 Giải Sáu: ${taoSo(3, 3).join(', ')}</div>`;
-      html += `<div class="number">🏅 Giải Bảy: ${taoSo(2, 4).join(', ')}</div>`;
-      document.getElementById('result').innerHTML = html;
+      setText('gdb', 6);
+      setText('g1', 5);
+      setText('g2_1', 5); setText('g2_2', 5);
+      setText('g3_1', 5); setText('g3_2', 5); setText('g3_3', 5);
+      setText('g3_4', 5); setText('g3_5', 5); setText('g3_6', 5);
+      setText('g4_1', 5); setText('g4_2', 5); setText('g4_3', 5); setText('g4_4', 5);
+      setText('g5_1', 4); setText('g5_2', 4); setText('g5_3', 4);
+      setText('g5_4', 4); setText('g5_5', 4); setText('g5_6', 4);
+      setText('g6_1', 3); setText('g6_2', 3); setText('g6_3', 3);
+      setText('g7_1', 2); setText('g7_2', 2); setText('g7_3', 2); setText('g7_4', 2);
     }
   </script>
+
 </body>
 </html>
