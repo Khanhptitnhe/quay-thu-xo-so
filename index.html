@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Quay Thử Xổ Số</title>
+  <style>
+    body { font-family: Arial; text-align: center; background: #222; color: #fff; }
+    .result { font-size: 1.5em; margin-top: 20px; }
+    button { padding: 10px 20px; font-size: 16px; cursor: pointer; }
+    .number { margin: 10px 0; font-size: 1.8em; }
+  </style>
+</head>
+<body>
+  <h1>🎯 Quay Thử Xổ Số Miền Bắc</h1>
+  <button onclick="quayThu()">Quay Ngay</button>
+  <div class="result" id="result"></div>
+
+  <script>
+    function taoSo(dai, soLuong) {
+      let kq = [];
+      for (let i = 0; i < soLuong; i++) {
+        let so = Math.floor(Math.random() * Math.pow(10, dai)).toString().padStart(dai, '0');
+        kq.push(so);
+      }
+      return kq;
+    }
+
+    function quayThu() {
+      let html = '';
+      html += `<div class="number">🎁 Giải ĐB: ${taoSo(5, 1)[0]}</div>`;
+      html += `<div class="number">🥇 Giải Nhất: ${taoSo(5, 1)[0]}</div>`;
+      html += `<div class="number">🥈 Giải Nhì: ${taoSo(5, 2).join(', ')}</div>`;
+      html += `<div class="number">🥉 Giải Ba: ${taoSo(5, 6).join(', ')}</div>`;
+      html += `<div class="number">🏅 Giải Tư: ${taoSo(4, 4).join(', ')}</div>`;
+      html += `<div class="number">🏅 Giải Năm: ${taoSo(4, 6).join(', ')}</div>`;
+      html += `<div class="number">🏅 Giải Sáu: ${taoSo(3, 3).join(', ')}</div>`;
+      html += `<div class="number">🏅 Giải Bảy: ${taoSo(2, 4).join(', ')}</div>`;
+      document.getElementById('result').innerHTML = html;
+    }
+  </script>
+</body>
+</html>
